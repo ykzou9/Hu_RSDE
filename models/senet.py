@@ -11,6 +11,11 @@ import torch.nn as nn
 from torch.utils import model_zoo
 import copy
 import numpy as np
+import urllib.request
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+url='http://data.lip6.fr/cadene/pretrainedmodels/se_resnext101_32x4d-3b2fe3d8.pth'
+response = urllib.request.urlopen(url)
 
 __all__ = ['SENet', 'senet154', 'se_resnet50', 'se_resnet101', 'se_resnet152',
            'se_resnext50_32x4d', 'se_resnext101_32x4d']
