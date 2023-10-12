@@ -81,8 +81,8 @@ def train(train_loader, model, optimizer, epoch):
     end = time.time()
     for i, sample_batched in enumerate(train_loader):
         image, depth = sample_batched['image'], sample_batched['depth']
-
-        depth = depth.cuda(async=True)
+        # depth = depth.cuda(async=True)
+        depth = depth.to(torch.device("cuda", non_blocking=True))
         image = image.cuda()
         image = torch.autograd.Variable(image)
         depth = torch.autograd.Variable(depth)
