@@ -44,7 +44,7 @@ def getTrainingData(batch_size=64):
     __imagenet_stats = {'mean': [0.485, 0.456, 0.406],
                         'std': [0.229, 0.224, 0.225]}
 
-    transformed_training = depthDataset(csv_file='./data/nyu2_train.csv',
+    transformed_training = depthDataset(csv_file='/kaggle/input/image-depth-estimation/data/nyu2_train.csv',
                                         transform=transforms.Compose([
                                             Scale(240),
                                             RandomHorizontalFlip(),
@@ -73,7 +73,7 @@ def getTestingData(batch_size=64):
     __imagenet_stats = {'mean': [0.485, 0.456, 0.406],
                         'std': [0.229, 0.224, 0.225]}
     # scale = random.uniform(1, 1.5)
-    transformed_testing = depthDataset(csv_file='./data/nyu2_test.csv',
+    transformed_testing = depthDataset(csv_file='/kaggle/input/image-depth-estimation/data/nyu2_test.csv',
                                        transform=transforms.Compose([
                                            Scale(240),
                                            CenterCrop([304, 228], [304, 228]),
