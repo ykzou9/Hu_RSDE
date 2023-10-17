@@ -1,5 +1,6 @@
+import sys
+sys.path.append('/kaggle/working/Hu_RSDE/models')
 import argparse
-
 import time
 import torch
 import torch.nn as nn
